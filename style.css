@@ -101,3 +101,73 @@ textarea{ width:100%; min-height:140px; resize:vertical }
 }
 
 .hint{ color:var(--muted); font-size:12px; margin-left:6px }
+/* general mobile-friendly baseline */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #111;
+  color: #eee;
+}
+
+/* container is centered with flexible width */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* cards / sections */
+.card {
+  background: rgba(40, 40, 40, 0.9); /* transparent dark */
+  border-radius: 12px;
+  margin-bottom: 30px;
+  padding: 20px;
+}
+
+/* buttons */
+button {
+  border-radius: 8px;
+  padding: 10px 15px;
+  background: rgba(80,80,80,0.6);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin: 5px;
+}
+button:hover { background: rgba(120,120,120,0.8); }
+
+/* inputs + textarea scale nicely */
+textarea, input {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #1a1a1a;
+  color: #eee;
+}
+
+/* responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    width: 100%; /* stack full-width buttons on mobile */
+    margin: 8px 0;
+  }
+
+  textarea {
+    height: 120px;
+  }
+}
+
+
