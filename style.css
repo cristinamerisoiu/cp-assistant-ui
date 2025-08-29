@@ -1,174 +1,209 @@
-:root{
-  --bg:#111214;
-  --fg:#e7e9ed;
-  --muted:#a3a7b2;
-  --panel:#191b1f;
-  --panel-alpha: rgba(25,27,31,.86);   /* transparency in cards */
-  --soft:#1f2227;
-  --border:#262a31;
-  --btn: rgba(42,46,54,.78);           /* semi-transparent buttons */
-  --btn-hover: rgba(55,60,69,.85);
-  --ghost: rgba(32,35,39,.55);
-  --radius:16px;                       /* soft corners */
-  --shadow: 0 14px 36px rgba(0,0,0,.35);
+:root {
+  --bg: #111214;
+  --fg: #e7e9ed;
+  --muted: #a3a7b2;
+  --panel: #191b1f;
+  --panel-alpha: rgba(25, 27, 31, .86);   /* transparency in cards */
+  --soft: #1f2227;
+  --border: #262a31;
+  --btn: rgba(42, 46, 54, .78);           /* semi-transparent buttons */
+  --btn-hover: rgba(55, 60, 69, .85);
+  --ghost: rgba(32, 35, 39, .55);
+  --radius: 16px;                       /* soft corners */
+  --shadow: 0 14px 36px rgba(0, 0, 0, .35);
 }
 
-*{ box-sizing:border-box }
-html,body{ height:100% }
+* { box-sizing: border-box; }
+html, body { height: 100%; }
 
-body{
-  margin:0;
-  padding:0;
+body {
+  margin: 0;
+  padding: 0;
   background: radial-gradient(1200px 800px at 10% -10%, #15171b 0%, #101114 40%, #0e1012 100%);
-  color:var(--fg);
+  color: var(--fg);
   font: 15px/1.55 'Montserrat', system-ui, Segoe UI, Arial, sans-serif;
 }
 
 /* Top nav */
-.nav{
-  position:sticky; top:0; z-index:10;
-  display:flex; gap:10px; padding:12px 16px;
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 10px;
+  padding: 12px 16px;
   backdrop-filter: blur(6px);
-  background: rgba(18,20,24,.85);
-  border-bottom:1px solid var(--border);
+  background: rgba(18, 20, 24, .85);
+  border-bottom: 1px solid var(--border);
 }
-.tab-btn{
-  padding:10px 14px;
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  background:var(--btn);
-  color:var(--fg);
-  cursor:pointer;
+.tab-btn {
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--btn);
+  color: var(--fg);
+  cursor: pointer;
   transition: background .2s ease, transform .05s ease;
 }
-.tab-btn:hover{ background:var(--btn-hover) }
-.tab-btn.active{ background:rgba(60,65,74,.9) }
+.tab-btn:hover { background: var(--btn-hover); }
+.tab-btn.active { background: rgba(60, 65, 74, .9); }
 
 /* Panels */
-.panel{
-  display:none;
-  max-width:1000px;
-  margin:26px auto;
-  padding:0 16px;
+.panel {
+  display: none;
+  max-width: 1000px;
+  margin: 26px auto;
+  padding: 0 16px;
 }
-.panel.active{ display:block }
+.panel.active { display: block; }
 
-h2{ margin:6px 0 16px 4px; font-weight:600 }
-h3{ margin:0 0 10px 0; font-weight:600 }
+h2 { margin: 6px 0 16px 4px; font-weight: 600; }
+h3 { margin: 0 0 10px 0; font-weight: 600; }
 
-.row{
-  display:flex;
-  gap:10px;
-  align-items:center;
-  flex-wrap:wrap;
-  margin:8px 0;
+.row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 8px 0;
 }
 
 /* Preset area */
-.preset-box{
+.preset-box {
   background: var(--panel-alpha);
-  border:1px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 22px;
   box-shadow: var(--shadow);
-  padding:18px;
-  margin-bottom:24px; /* space between newsletter & grid */
+  padding: 18px;
+  margin-bottom: 24px; /* space between newsletter & grid */
 }
 
-.grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:24px;
-  margin-top:16px;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 16px;
 }
 
-@media (min-width:900px){
-  .grid{ grid-template-columns:1fr 1fr }
+@media (min-width: 900px) {
+  .grid { grid-template-columns: 1fr 1fr; }
 }
 
 /* Inputs */
-.input, textarea, .select, .file{
+.input, textarea, .select, .file {
   background: var(--soft);
   color: var(--fg);
-  border:1px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 14px;
-  padding:10px 12px;
-  outline:none;
+  padding: 10px 12px;
+  outline: none;
 }
-textarea{
-  width:100%;
-  min-height:140px;
-  resize:vertical;
+textarea {
+  width: 100%;
+  min-height: 140px;
+  resize: vertical;
 }
 
 /* Buttons */
-.btn{
+.btn {
   background: var(--btn);
   color: var(--fg);
-  border:1px solid var(--border);
+  border: 1px solid var(--border);
   border-radius: 14px;
-  padding:10px 14px;
-  cursor:pointer;
+  padding: 10px 14px;
+  cursor: pointer;
   transition: background .2s ease, transform .05s ease;
 }
-.btn:hover{ background:var(--btn-hover) }
-.btn:active{ transform: scale(.98) }
-.btn.ghost{ background: var(--ghost) }
+.btn:hover { background: var(--btn-hover); }
+.btn:active { transform: scale(.98); }
+.btn.ghost { background: var(--ghost); }
 
 /* Output areas */
-.out{
-  background:#0f1115;
-  border:1px solid var(--border);
+.out {
+  background: #0f1115;
+  border: 1px solid var(--border);
   border-radius: 16px;
-  padding:14px;
-  min-height:120px;
+  padding: 14px;
+  min-height: 120px;
   white-space: pre-wrap;
-  color:#d6dae2;
-  margin-top:12px; /* breathing room above next block */
+  color: #d6dae2;
+  margin-top: 12px; /* breathing room above next block */
 }
 
-.hint{ color:var(--muted); font-size:12px; margin-left:6px }
+.hint { color: var(--muted); font-size: 12px; margin-left: 6px; }
 
 /* =========================
    MOBILE RESPONSIVE RULES
    ========================= */
-@media (max-width: 768px){
+@media (max-width: 768px) {
   /* tighter panel padding on phones */
-  .panel{ padding:0 12px; }
+  .panel { padding: 0 12px; }
 
   /* nav buttons fill and don’t crowd */
-  .nav{ gap:8px; padding:10px 12px; }
-  .tab-btn{ flex:1; text-align:center; padding:10px 12px; }
+  .nav { gap: 8px; padding: 10px 12px; }
+  .tab-btn { flex: 1; text-align: center; padding: 10px 12px; }
 
   /* stack row content vertically */
-  .row{
-    flex-direction:column;
-    align-items:stretch;
-    gap:8px;
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
   }
 
   /* inputs and selects full width with bigger tap targets */
-  .input, .select, .file, textarea{
-    width:100%;
-    padding:12px 14px;
-    border-radius:12px;
+  .input, .select, .file, textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
   }
-  textarea{ min-height:120px; }
+  textarea { min-height: 120px; }
 
   /* make buttons full width for thumbs */
-  .btn{
-    width:100%;
-    padding:12px 14px;
+  .btn {
+    width: 100%;
+    padding: 12px 14px;
   }
 
   /* card spacing/padding softened */
-  .preset-box{
-    padding:16px;
-    margin-bottom:22px;
+  .preset-box {
+    padding: 16px;
+    margin-bottom: 22px;
   }
 
   /* grid already 1 column by default; keep gaps comfy */
-  .grid{ gap:18px; margin-top:14px; }
+  .grid { gap: 18px; margin-top: 14px; }
 
   /* headings slightly tighter */
-  h2{ margin:6px 0 12px 2px; }
+  h2 { margin: 6px 0 12px 2px; }
+}
+
+/* =========================
+   NEW RESPONSIVE RULES (ADDED FOR TABLET AND SMALL SCREENS)
+   ========================= */
+
+/* Tablet screens (769px–900px) */
+@media (max-width: 900px) and (min-width: 769px) {
+  .panel { max-width: 700px; padding: 0 14px; } /* Narrower panels for tablets */
+  .grid { grid-template-columns: 1fr; } /* Keep single-column grid */
+  .input, .select, .file, textarea { padding: 11px 13px; min-height: 44px; } /* Larger tap targets */
+  .btn { padding: 11px 13px; min-height: 48px; } /* Touch-friendly buttons */
+  .preset-box { padding: 16px; margin-bottom: 20px; } /* Tighter card spacing */
+  .grid { gap: 20px; margin-top: 14px; } /* Adjusted grid spacing */
+  h2 { font-size: 1.3rem; } /* Slightly smaller headings */
+  h3 { font-size: 1.1rem; }
+}
+
+/* Very small screens (<400px) */
+@media (max-width: 400px) {
+  .nav { gap: 6px; padding: 6px 8px; flex-wrap: wrap; } /* Prevent nav overflow */
+  .tab-btn { padding: 6px 8px; min-width: 60px; font-size: 0.85rem; } /* Smaller buttons */
+  .panel { padding: 0 8px; max-width: 100%; } /* Full-width panels */
+  .input, .select, .file, textarea { padding: 10px 12px; min-height: 40px; } /* Smaller inputs */
+  .btn { padding: 10px 12px; min-height: 44px; } /* Touch-friendly buttons */
+  .preset-box { padding: 12px; margin-bottom: 16px; } /* Tighter cards */
+  .grid { gap: 14px; margin-top: 12px; } /* Tighter grid */
+  h2 { font-size: 1.1rem; margin: 6px 0 10px 2px; } /* Smaller headings */
+  h3 { font-size: 0.9rem; }
+  .out { max-height: 40vh; overflow-y: auto; } /* Scrollable output */
+  textarea { max-height: 40vh; overflow-y: auto; } /* Scrollable textarea */
 }
