@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>CP Assistant</title>
+
+  <!-- Montserrat font -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="nav">
+    <button id="tab-ask" class="tab-btn active">Ask</button>
+    <button id="tab-presets" class="tab-btn">Presets</button>
+    <button id="tab-upload" class="tab-btn">Upload PDFs</button>
+  </nav>
+
+  <!-- ASK -->
+  <section id="ask" class="panel active">
+    <h2>Ask Anything</h2>
+    <textarea id="question" class="input" placeholder="Type your request in DE/EN…"></textarea>
+    <div class="row">
+      <button class="btn" id="askSend">Ask</button>
+      <button class="btn ghost" id="askCopy">Copy</button>
+      <span class="hint">POST /ask with {"question": "..."}.</span>
+    </div>
+    <pre id="askOut" class="out"></pre>
+  </section>
+
+  <!-- PRESETS -->
+  <section id="presets" class="panel">
+    <h2>Presets</h2>
+
+    <!-- Newsletter (full format) -->
+    <div class="preset-box">
+      <h3>Newsletter (full format)</h3>
+      <div class="row">
+        <input id="newsTopic" class="input" placeholder="Topic/angle (e.g. KI & Nachhaltigkeit)" />
+        <button class="btn" id="genNewsletter">Generate</button>
+        <button class="btn ghost" id="newsCopy">Copy</button>
+      </div>
+      <pre id="newsOut" class="out"></pre>
+    </div>
+
+    <!-- LinkedIn + Blog -->
+    <div class="grid">
+      <div class="preset-box">
+        <h3>LinkedIn</h3>
+        <div class="row">
+          <input id="liTopic" class="input" placeholder="Topic (e.g. Digitale Souveränität)" />
+          <select id="liLang" class="input select">
+            <option value="de">DE</option>
+            <option value="en">EN</option>
+          </select>
+          <button class="btn" id="genLinkedIn">Generate</button>
+          <button class="btn ghost" id="liCopy">Copy</button>
+        </div>
+        <pre id="liOut" class="out"></pre>
+      </div>
+
+      <div class="preset-box">
+        <h3>Blog (DE)</h3>
+        <div class="row">
+          <input id="blogTopic" class="input" placeholder="Thema (z. B. Führung & Transformation)" />
+          <button class="btn" id="genBlog">Generate</button>
+          <button class="btn ghost" id="blogCopy">Copy</button>
+        </div>
+        <pre id="blogOut" class="out"></pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPLOAD -->
+  <section id="upload" class="panel">
+    <h2>Upload PDFs (future-proof)</h2>
+    <div class="row">
+      <input type="file" id="pdfFile" accept="application/pdf" class="input file" />
+      <button class="btn" id="uploadBtn">Upload</button>
+    </div>
+    <pre id="uploadOut" class="out"></pre>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
