@@ -1,11 +1,15 @@
-// Hardcoded endpoints to your Worker
+// Set your Worker base URL once
 const BASE = "https://cp-assistant-worker.merisoiu.workers.dev";
 const ASK_URL = BASE + "/ask";
 const PRESET_URL = BASE + "/preset";
 const UPLOAD_URL = BASE + "/upload";
 
 /* ------------ Tabs ------------ */
-const tabs = [["tab-ask","ask"],["tab-presets","presets"],["tab-upload","upload"]];
+const tabs = [
+  ["tab-ask","ask"],
+  ["tab-presets","presets"],
+  ["tab-upload","upload"]
+];
 tabs.forEach(([btn, panel])=>{
   document.getElementById(btn).onclick = ()=>{
     document.querySelectorAll(".tab-btn").forEach(b=>b.classList.remove("active"));
@@ -92,7 +96,7 @@ document.getElementById("blogCopy").onclick = ()=>{
   navigator.clipboard.writeText(document.getElementById("blogOut").textContent || "");
 };
 
-/* ------------ Upload PDFs (future) ------------ */
+/* ------------ Upload PDFs (optional future) ------------ */
 document.getElementById("uploadBtn").onclick = async ()=>{
   const file = document.getElementById("pdfFile").files[0];
   const out = document.getElementById("uploadOut");
