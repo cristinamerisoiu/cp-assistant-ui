@@ -13,10 +13,12 @@
   --shadow: 0 14px 36px rgba(0,0,0,.35);
 }
 
-*{box-sizing:border-box}
-html,body{height:100%}
+*{ box-sizing:border-box }
+html,body{ height:100% }
+
 body{
-  margin:0; padding:0;
+  margin:0;
+  padding:0;
   background: radial-gradient(1200px 800px at 10% -10%, #15171b 0%, #101114 40%, #0e1012 100%);
   color:var(--fg);
   font: 15px/1.55 'Montserrat', system-ui, Segoe UI, Arial, sans-serif;
@@ -36,33 +38,52 @@ body{
   border-radius:var(--radius);
   background:var(--btn);
   color:var(--fg);
-  cursor:pointer; transition: background .2s ease, transform .05s ease;
+  cursor:pointer;
+  transition: background .2s ease, transform .05s ease;
 }
 .tab-btn:hover{ background:var(--btn-hover) }
 .tab-btn.active{ background:rgba(60,65,74,.9) }
 
 /* Panels */
 .panel{
-  display:none; max-width:1000px; margin:26px auto; padding:0 16px;
+  display:none;
+  max-width:1000px;
+  margin:26px auto;
+  padding:0 16px;
 }
 .panel.active{ display:block }
 
 h2{ margin:6px 0 16px 4px; font-weight:600 }
 h3{ margin:0 0 10px 0; font-weight:600 }
 
-.row{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin:8px 0 }
+.row{
+  display:flex;
+  gap:10px;
+  align-items:center;
+  flex-wrap:wrap;
+  margin:8px 0;
+}
 
-/* Spacing + layout for preset area */
+/* Preset area */
 .preset-box{
   background: var(--panel-alpha);
   border:1px solid var(--border);
   border-radius: 22px;
   box-shadow: var(--shadow);
   padding:18px;
-  margin-bottom:24px;                   /* space between newsletter & grid */
+  margin-bottom:24px; /* space between newsletter & grid */
 }
-.grid{ display:grid; grid-template-columns:1fr; gap:24px; margin-top:16px }
-@media (min-width:900px){ .grid{ grid-template-columns:1fr 1fr } }
+
+.grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:24px;
+  margin-top:16px;
+}
+
+@media (min-width:900px){
+  .grid{ grid-template-columns:1fr 1fr }
+}
 
 /* Inputs */
 .input, textarea, .select, .file{
@@ -70,9 +91,14 @@ h3{ margin:0 0 10px 0; font-weight:600 }
   color: var(--fg);
   border:1px solid var(--border);
   border-radius: 14px;
-  padding:10px 12px; outline:none;
+  padding:10px 12px;
+  outline:none;
 }
-textarea{ width:100%; min-height:140px; resize:vertical }
+textarea{
+  width:100%;
+  min-height:140px;
+  resize:vertical;
+}
 
 /* Buttons */
 .btn{
@@ -97,77 +123,52 @@ textarea{ width:100%; min-height:140px; resize:vertical }
   min-height:120px;
   white-space: pre-wrap;
   color:#d6dae2;
-  margin-top:12px;                      /* breathing room above next block */
+  margin-top:12px; /* breathing room above next block */
 }
 
 .hint{ color:var(--muted); font-size:12px; margin-left:6px }
-/* general mobile-friendly baseline */
-body {
-  font-family: 'Montserrat', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #111;
-  color: #eee;
-}
 
-/* container is centered with flexible width */
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-}
+/* =========================
+   MOBILE RESPONSIVE RULES
+   ========================= */
+@media (max-width: 768px){
+  /* tighter panel padding on phones */
+  .panel{ padding:0 12px; }
 
-/* cards / sections */
-.card {
-  background: rgba(40, 40, 40, 0.9); /* transparent dark */
-  border-radius: 12px;
-  margin-bottom: 30px;
-  padding: 20px;
-}
+  /* nav buttons fill and don’t crowd */
+  .nav{ gap:8px; padding:10px 12px; }
+  .tab-btn{ flex:1; text-align:center; padding:10px 12px; }
 
-/* buttons */
-button {
-  border-radius: 8px;
-  padding: 10px 15px;
-  background: rgba(80,80,80,0.6);
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  margin: 5px;
-}
-button:hover { background: rgba(120,120,120,0.8); }
-
-/* inputs + textarea scale nicely */
-textarea, input {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background: #1a1a1a;
-  color: #eee;
-}
-
-/* responsiveness */
-@media (max-width: 768px) {
-  .container {
-    padding: 10px;
+  /* stack row content vertically */
+  .row{
+    flex-direction:column;
+    align-items:stretch;
+    gap:8px;
   }
 
-  .card {
-    padding: 15px;
-    margin-bottom: 20px;
+  /* inputs and selects full width with bigger tap targets */
+  .input, .select, .file, textarea{
+    width:100%;
+    padding:12px 14px;
+    border-radius:12px;
+  }
+  textarea{ min-height:120px; }
+
+  /* make buttons full width for thumbs */
+  .btn{
+    width:100%;
+    padding:12px 14px;
   }
 
-  button {
-    width: 100%; /* stack full-width buttons on mobile */
-    margin: 8px 0;
+  /* card spacing/padding softened */
+  .preset-box{
+    padding:16px;
+    margin-bottom:22px;
   }
 
-  textarea {
-    height: 120px;
-  }
+  /* grid already 1 column by default; keep gaps comfy */
+  .grid{ gap:18px; margin-top:14px; }
+
+  /* headings slightly tighter */
+  h2{ margin:6px 0 12px 2px; }
 }
-
-
