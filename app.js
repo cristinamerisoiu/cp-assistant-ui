@@ -96,6 +96,36 @@ document.getElementById("blogCopy").onclick = ()=>{
   navigator.clipboard.writeText(document.getElementById("blogOut").textContent || "");
 };
 
+// ------------ X (DE) preset ------------
+const genX = document.getElementById("genX");
+if (genX) {
+  genX.onclick = async () => {
+    const topic = (document.getElementById("xTopic").value || "").trim();
+    const landing = document.getElementById("xLanding").checked;
+    const out = document.getElementById("xOut");
+    if (!topic) { out.textContent = "Bitte ein Thema angeben."; return; }
+    out.textContent = "Thinking…";
+    try {
+      const r = await fetch(PRESET_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "x", lang: "de", topic, landing })
+      });
+      const j = await r.json();
+      out.textContent = j.response || JSON.stringify(j, null, 2);
+    } catch (e) {
+      out.textContent = "Error: " + e.message;
+    }
+  };
+
+  const xCopy = document.getElementById("xCopy");
+  xCopy.onclick = () => {
+    const txt = document.getElementById("xOut").textContent || "";
+    navigator.clipboard.writeText(txt);
+  };
+}
+
+
 /* ------------ Upload PDFs (optional future) ------------ */
 document.getElementById("uploadBtn").onclick = async ()=>{
   const file = document.getElementById("pdfFile").files[0];
@@ -110,3 +140,4 @@ document.getElementById("uploadBtn").onclick = async ()=>{
     out.textContent = JSON.stringify(j, null, 2);
   }catch(e){ out.textContent = "Error: " + e.message; }
 };
+
