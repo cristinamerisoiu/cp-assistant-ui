@@ -20,7 +20,7 @@
   <!-- ASK -->
   <section id="ask" class="panel active">
     <h2>Ask Anything</h2>
-    <textarea id="question" class="input" placeholder="Type your request in DE/EN…"></textarea>
+    <textarea id="question" class="input" placeholder="Type your request in DE/EN"></textarea>
     <div class="row">
       <button class="btn" id="askSend">Ask</button>
       <button class="btn ghost" id="askCopy">Copy</button>
@@ -38,6 +38,7 @@
       <div class="row">
         <input id="newsTopic" class="input" placeholder="Topic/angle (e.g. AI & Sustainability)" />
         <button class="btn" id="genNewsletter">Generate</button>
+        <button class="btn" id="newsRevise">Revise</button>
         <button class="btn ghost" id="newsCopy">Copy</button>
       </div>
       <pre id="newsOut" class="out"></pre>
@@ -54,6 +55,7 @@
             <option value="en">EN</option>
           </select>
           <button class="btn" id="genLinkedIn">Generate</button>
+          <button class="btn" id="liRevise">Revise</button>
           <button class="btn ghost" id="liCopy">Copy</button>
         </div>
         <pre id="liOut" class="out"></pre>
@@ -63,12 +65,13 @@
       <div class="preset-box">
         <h3>X (DE)</h3>
         <div class="row">
-          <input id="xTopic" class="input" placeholder="Thema / Keyword for the X-Post" />
+          <input id="xTopic" class="input" placeholder="Topic / Keyword for the X-Post" />
           <label style="display:flex;align-items:center;gap:8px;">
             <input id="xLanding" type="checkbox" />
             <span>Also generate landing page draft</span>
           </label>
           <button class="btn" id="genX">Generate</button>
+          <button class="btn" id="xRevise">Revise</button>
           <button class="btn ghost" id="xCopy">Copy</button>
         </div>
         <pre id="xOut" class="out"></pre>
@@ -77,8 +80,9 @@
       <div class="preset-box">
         <h3>Blog (DE)</h3>
         <div class="row">
-          <input id="blogTopic" class="input" placeholder="Thema (e.g. Leadership & Transformation)" />
+          <input id="blogTopic" class="input" placeholder="Topic (e.g. Leadership & Transformation)" />
           <button class="btn" id="genBlog">Generate</button>
+          <button class="btn" id="blogRevise">Revise</button>
           <button class="btn ghost" id="blogCopy">Copy</button>
         </div>
         <pre id="blogOut" class="out"></pre>
@@ -99,5 +103,3 @@
   <script src="app.js"></script>
 </body>
 </html>
-
-
